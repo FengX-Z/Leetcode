@@ -11,3 +11,11 @@ if b == 'No':
     print (b)
 else:
     print (a)
+
+
+
+x = np.array([0.8147, 0.9058, 0.1270, 0.9134, 0.6324, 0.0975, 0.2785, 0.5469, 0.9575, 0.9649])
+y = np.array([0.2269, 0.9533, -0.1331, 0.6697, 0.0064, -0.1870, -0.3367, -0.0476, 0.9763, 1.0050])
+theta_1 = (np.sum(x*y) * np.sum(x**4) - np.sum(x**2*y) * np.sum(x**3)) / (np.sum(x**2) * np.sum(x**4) - np.sum(x**3) * np.sum(x**3))
+theta_2 = (np.sum(x**2*y) * np.sum(x**2) - np.sum(x*y) * np.sum(x**3)) / (np.sum(x**2) * np.sum(x**4) - np.sum(x**3) * np.sum(x**3))
+print(theta_1, theta_2)
