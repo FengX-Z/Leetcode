@@ -19,3 +19,22 @@ y = np.array([0.2269, 0.9533, -0.1331, 0.6697, 0.0064, -0.1870, -0.3367, -0.0476
 theta_1 = (np.sum(x*y) * np.sum(x**4) - np.sum(x**2*y) * np.sum(x**3)) / (np.sum(x**2) * np.sum(x**4) - np.sum(x**3) * np.sum(x**3))
 theta_2 = (np.sum(x**2*y) * np.sum(x**2) - np.sum(x*y) * np.sum(x**3)) / (np.sum(x**2) * np.sum(x**4) - np.sum(x**3) * np.sum(x**3))
 print(theta_1, theta_2)
+
+
+x = np.random.uniform(-1, 2, 15)
+y = x ** 3 - 3 * x ** 2 - 2
+noise = np.random.normal(0, 0.3, size=len(y))
+y_noise = y + noise
+a = np.arange(-1,2.01,0.01)
+b = a ** 3 - 3 * a ** 2 - 2
+print(x, y, noise, y_noise)
+
+fig = plt.figure(dpi=300, figsize=(10, 10))
+rect = [0.5, 0.7, 0.7, 0.5]
+ax = plt.axes(rect)
+ax.plot(a, b, label='y')
+ax.scatter(x, y_noise, label='y_noise', c='red')
+plt.title('Function')
+plt.legend(loc='best')
+plt.grid(True)
+plt.show()
