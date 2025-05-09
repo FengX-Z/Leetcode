@@ -52,3 +52,13 @@ plt.title('Function')
 plt.legend(loc='best')
 plt.grid(True)
 plt.show()
+
+
+def Regression(X, Y):
+    p = np.column_stack([np.ones_like(X), X, X**2, X**3])
+    p_T = p.T
+    theta = np.linalg.inv(p_T @ p) @ p_T @ Y
+    return theta
+
+theta_m = Regression(x, y_noise)
+print(theta_m)
